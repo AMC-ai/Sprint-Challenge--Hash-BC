@@ -25,6 +25,10 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
+    proof = 1
+    last_hash = hashlib.sha256(str(last_proof).encode()).hexdigest()
+    while valid_proof(last_hash, proof) is False:
+        proof += random.randint(1, 100)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -40,7 +44,8 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    guess = hashlib.sha256(str(proof).encode()).hexdigest()
+    return guess[:5] == last_hash[-5:]
 
 
 if __name__ == '__main__':
@@ -53,13 +58,13 @@ if __name__ == '__main__':
     coins_mined = 0
 
     # Load or create ID
-    f = open("my_id.txt", "r")
+    f = open("amic_ai.txt", "r")
     id = f.read()
     print("ID is", id)
     f.close()
 
     if id == 'NONAME\n':
-        print("ERROR: You must change your name in `my_id.txt`!")
+        print("ERROR: You must change your name in `amic_ai.txt`!")
         exit()
     # Run forever until interrupted
     while True:
