@@ -215,3 +215,170 @@ Traceback (most recent call last):
     guess = hashlib.sha256(str(proof).encode()).hexdigest()
 KeyboardInterrupt
 PS C:\Users\am_cl\OneDrive\Documents\repos\Sprints\Sprint-Challenge--Hash-BC\blockchain>
+
+<!-- 
+PS C:\Users\am_cl\OneDrive\Documents\repos\Sprints\Sprint-Challenge--Hash-BC\blockchain> python miner.py https://lambda-coin-test-1.herokuapp.com/api
+ID is AMC
+
+Searching for next proof
+Proof found: 25799774 in 1.7448219999999997
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 7522093 in 0.5235727999999997
+Total coins mined: 1
+Searching for next proof
+Proof found: 828975 in 0.06591970000000025
+Total coins mined: 2
+Searching for next proof
+Proof found: 95976112 in 6.590325300000001
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 19710406 in 1.349703100000001
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 34132134 in 2.8102783000000002
+Total coins mined: 3
+Searching for next proof
+Proof found: 6863533 in 0.5083015000000017
+Total coins mined: 4
+Searching for next proof
+Proof found: 45268265 in 3.154080399999998
+Total coins mined: 5
+Searching for next proof
+Proof found: 18622049 in 1.3221223000000002
+Total coins mined: 6
+Traceback (most recent call last):
+  File "miner.py", line 72, in <module>
+    r = requests.get(url=node + "/last_proof")
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\urllib3\connectionpool.py", line 665, in urlopen       
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\urllib3\connectionpool.py", line 376, in _make_request 
+    self._validate_conn(conn)
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\urllib3\connectionpool.py", line 994, in _validate_conn
+    conn.connect()
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\urllib3\connection.py", line 352, in connect
+    self.sock = ssl_wrap_socket(
+  File "C:\Users\am_cl\.virtualenvs\Sprint-Challenge--Hash-BC-puEHw8vR\lib\site-packages\urllib3\util\ssl_.py", line 336, in ssl_wrap_socket    
+    context.load_verify_locations(ca_certs, ca_cert_dir)
+KeyboardInterrupt
+PS C:\Users\am_cl\OneDrive\Documents\repos\Sprints\Sprint-Challenge--Hash-BC\blockchain> python miner.py https://lambda-coin-test-1.herokuapp.com/api
+ID is AMC
+
+Searching for next proof
+Proof found: 108582384 in 7.1620441
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 83665798 in 5.7004404
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 2519177 in 0.1802191999999998
+Total coins mined: 1
+Searching for next proof
+Proof found: 76335479 in 5.157537300000001
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 13570168 in 0.9005960000000002
+Total coins mined: 2
+Searching for next proof
+Proof found: 79291438 in 5.601911100000002
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 2357507 in 0.17353100000000055
+Total coins mined: 3
+Searching for next proof
+Proof found: 13547429 in 0.9306996999999981
+Total coins mined: 4
+Searching for next proof
+Proof found: 7006845 in 0.47998369999999824
+Total coins mined: 5
+Searching for next proof
+Proof found: 198045482 in 13.994005599999994
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 7551205 in 0.5524491999999981
+Total coins mined: 6
+Searching for next proof
+Proof found: 11169860 in 0.8946507999999938
+Total coins mined: 7
+Searching for next proof
+Proof found: 10458292 in 0.7772393000000051
+Total coins mined: 8
+Searching for next proof
+Proof found: 89222636 in 7.135596600000007
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 56760310 in 4.6123908
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 10256771 in 0.9035996000000068
+Total coins mined: 9
+Searching for next proof
+Proof found: 36279757 in 3.3465626999999927
+Total coins mined: 10
+Searching for next proof
+Proof found: 25657900 in 2.4343542999999954
+Total coins mined: 11
+Searching for next proof
+Proof found: 45158378 in 4.702922799999996
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 64022537 in 6.2615129
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 72707725 in 6.8625339000000025
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 29352340 in 2.9586116999999916
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 36372536 in 3.458938599999996
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 62950392 in 6.193044100000009
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 125843779 in 12.286784499999996
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 105875008 in 9.955475399999983
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 3826592 in 0.4002800000000093
+Total coins mined: 12
+Searching for next proof
+Proof found: 26419767 in 2.7027768000000094
+Total coins mined: 13
+Searching for next proof
+Proof found: 916707 in 0.09289120000002526
+Total coins mined: 14
+Searching for next proof
+Proof found: 52151160 in 5.108799800000014
+Total coins mined: 15
+Searching for next proof
+Proof found: 420373 in 0.048787599999997155
+Total coins mined: 16
+Searching for next proof
+Proof found: 100379335 in 10.420416199999977
+Proof valid but already submitted.
+Searching for next proof
+Proof found: 7422917 in 0.7227930999999899
+Proof valid but already submitted.
+Searching for next proof
+Traceback (most recent call last):
+  File "miner.py", line 74, in <module>
+    new_proof = proof_of_work(data.get('proof'))
+  File "miner.py", line 30, in proof_of_work
+    while valid_proof(last_hash, proof) is False:
+  File "miner.py", line 48, in valid_proof
+    return guess[:5] == last_hash[-5:]
+KeyboardInterrupt
+PS C:\Users\am_cl\OneDrive\Documents\repos\Sprints\Sprint-Challenge--Hash-BC\blockchain> -->
