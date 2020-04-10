@@ -18,6 +18,13 @@ def reconstruct_trip(tickets, length):
 
     """
     YOUR CODE HERE
+    link togeither source and destination tickets to reconstruct the trip starting at none by creating a new array to display them and return the flight path that was taken
     """
-
-    pass
+    for ticket in tickets:
+        hash_table_insert(hashtable, ticket.source, ticket.destination)
+    flight_path = []
+    new_ticket = hash_table_retrieve(hashtable, 'NONE')
+    while new_ticket != 'NONE':
+        flight_path.append(new_ticket)
+        new_ticket = hash_table_retrieve(hashtable, new_ticket)
+    return flight_path
