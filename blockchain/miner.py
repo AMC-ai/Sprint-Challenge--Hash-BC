@@ -73,6 +73,21 @@ if __name__ == '__main__':
         data = r.json()
         new_proof = proof_of_work(data.get('proof'))
 
+        # or if there is a JSON error us code below
+    # while True:
+    #     # Get the last proof from the server
+    #     r = requests.get(url=node + "/last_proof")
+    #     try:
+    #         data = r.json()
+    #     except ValueError:
+    #         print("Error:  Non-json response")
+    #         print("Response returned:")
+    #         print(r)
+    #         break
+    #     new_proof = proof_of_work(data.get('proof'))
+    #     if new_proof is None:
+    #         continue
+
         post_data = {"proof": new_proof,
                      "id": id}
 
