@@ -18,7 +18,7 @@ def reconstruct_trip(tickets, length):
 
     """
     YOUR CODE HERE
-    iterate through tickets objects and insert into hashtable (flight_path)
+    iterate through tickets objects and insert into hashtable (route)
     link togeither source and destination tickets to reconstruct the trip starting at none by creating a new array to display them and return the flight path that was taken
     """
     # iterate through
@@ -26,11 +26,11 @@ def reconstruct_trip(tickets, length):
         # using function to "link the ticket objects together"
         hash_table_insert(hashtable, ticket.source, ticket.destination)
     # new table to display reconstructed flight path
-    flight_path = []
+    route = []
     # gives us the origin
     new_ticket = hash_table_retrieve(hashtable, 'NONE')
     # appends destination ticket to source ticket in order set in the new table
     while new_ticket != 'NONE':
-        flight_path.append(new_ticket)
+        route.append(new_ticket)
         new_ticket = hash_table_retrieve(hashtable, new_ticket)
-    return flight_path
+    return route
