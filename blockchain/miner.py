@@ -23,8 +23,12 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = 0
+    # proof = 0
     #  TODO: Your code here
+    proof = 1
+    last_hash = hashlib.sha256(str(last_proof).encode()).hexdigest()
+    while valid_proof(last_hash, proof) is False:
+        proof += random.randint(1, 100000000)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -40,7 +44,8 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    guess = hashlib.sha256(str(proof).encode()).hexdigest()
+    return guess[:5] == last_hash[-5:]
 
 
 if __name__ == '__main__':
@@ -53,13 +58,13 @@ if __name__ == '__main__':
     coins_mined = 0
 
     # Load or create ID
-    f = open("my_id.txt", "r")
+    f = open("amic_ai.txt", "r")
     id = f.read()
     print("ID is", id)
     f.close()
 
     if id == 'NONAME\n':
-        print("ERROR: You must change your name in `my_id.txt`!")
+        print("ERROR: You must change your name in `amic_ai.txt`!")
         exit()
     # Run forever until interrupted
     while True:
@@ -67,6 +72,21 @@ if __name__ == '__main__':
         r = requests.get(url=node + "/last_proof")
         data = r.json()
         new_proof = proof_of_work(data.get('proof'))
+
+        # or if there is a JSON error us code below
+    # while True:
+    #     # Get the last proof from the server
+    #     r = requests.get(url=node + "/last_proof")
+    #     try:
+    #         data = r.json()
+    #     except ValueError:
+    #         print("Error:  Non-json response")
+    #         print("Response returned:")
+    #         print(r)
+    #         break
+    #     new_proof = proof_of_work(data.get('proof'))
+    #     if new_proof is None:
+    #         continue
 
         post_data = {"proof": new_proof,
                      "id": id}
